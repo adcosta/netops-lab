@@ -1,6 +1,6 @@
 # netops-lab
 
-Laboratório de introdução à gestão usando protocolos — **gNMI**, **gNOI**, **NETCONF** e RESTCONF.
+Laboratório de introdução aos protocolos — **gNMI**, **gNOI**, **NETCONF** e **RESTCONF**.
 
 O exercício usa um router **Nokia SR Linux** em container, orquestrado pelo **Containerlab**, e explora as interfaces de gestão que substituem a CLI manual e o SNMP em redes modernas.
 
