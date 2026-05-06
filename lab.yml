@@ -1,0 +1,7 @@
+name: netops-lab
+
+topology:
+  nodes:
+    srl:
+      kind: nokia_srlinux
+      image: ghcr.io/nokia/srlinux:latest
