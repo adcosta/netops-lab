@@ -35,6 +35,23 @@ A partir daqui, todos os comandos são iguais independentemente do sistema opera
 
 ---
 
+## Dependências base
+
+```bash
+sudo apt update
+sudo apt install -y git curl wget docker.io
+sudo usermod -aG docker $USER
+newgrp docker
+```
+
+> O `newgrp docker` aplica a permissão de grupo sem precisar de logout/login. Verifica que o Docker está operacional:
+
+```bash
+docker version
+```
+
+---
+
 ## Instalação das ferramentas
 
 ### 1. Containerlab
