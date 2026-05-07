@@ -138,19 +138,19 @@ bash -c "$(curl -sL https://get-gnoic.openconfig.net)"
 
 ```bash
 # Ping a partir do router
-gnoic -a clab-gnmi-lab-srl:57400 \
+gnoic -a clab-netops-lab-srl:57400 \
       -u admin -p 'NokiaSrl1!' \
       --skip-verify \
       system ping --destination 8.8.8.8 --count 3
 
 # Traceroute a partir do router
-gnoic -a clab-gnmi-lab-srl:57400 \
+gnoic -a clab-netops-lab-srl:57400 \
       -u admin -p 'NokiaSrl1!' \
       --skip-verify \
       system traceroute --destination 8.8.8.8
 
 # Hora do sistema
-gnoic -a clab-gnmi-lab-srl:57400 \
+gnoic -a clab-netops-lab-srl:57400 \
       -u admin -p 'NokiaSrl1!' \
       --skip-verify \
       system time
@@ -160,7 +160,7 @@ gnoic -a clab-gnmi-lab-srl:57400 \
 
 ```bash
 # Ver metadados de ficheiros no router
-gnoic -a clab-gnmi-lab-srl:57400 \
+gnoic -a clab-netops-lab-srl:57400 \
       -u admin -p 'NokiaSrl1!' \
       --skip-verify \
       file stat --path /etc/
@@ -192,7 +192,7 @@ Porta `830` (SSH) | Cliente: `netconf-console2`
 
 ```bash
 netconf-console2 \
-  --host clab-gnmi-lab-srl --port 830 \
+  --host clab-netops-lab-srl --port 830 \
   -u admin -p 'NokiaSrl1!' \
   --hello
 ```
@@ -201,7 +201,7 @@ netconf-console2 \
 
 ```bash
 netconf-console2 \
-  --host clab-gnmi-lab-srl --port 830 \
+  --host clab-netops-lab-srl --port 830 \
   -u admin -p 'NokiaSrl1!' \
   --get-config
 ```
@@ -210,7 +210,7 @@ netconf-console2 \
 
 ```bash
 netconf-console2 \
-  --host clab-gnmi-lab-srl --port 830 \
+  --host clab-netops-lab-srl --port 830 \
   -u admin -p 'NokiaSrl1!' \
   --get
 ```
@@ -219,7 +219,7 @@ netconf-console2 \
 
 ```bash
 netconf-console2 \
-  --host clab-gnmi-lab-srl --port 830 \
+  --host clab-netops-lab-srl --port 830 \
   -u admin -p 'NokiaSrl1!' \
   --get --xpath '/interface[name="mgmt0"]'
 ```
@@ -236,7 +236,7 @@ O SR Linux implementa JSON-RPC como interface HTTP — não RESTCONF puro (RFC 8
 
 ```bash
 curl -s -u admin:'NokiaSrl1!' \
-  http://clab-gnmi-lab-srl/jsonrpc \
+  http://clab-netops-lab-srl/jsonrpc \
   -H "Content-Type: application/json" \
   -d '{
     "jsonrpc": "2.0",
@@ -256,7 +256,7 @@ curl -s -u admin:'NokiaSrl1!' \
 ```bash
 # Interface específica
 curl -s -u admin:'NokiaSrl1!' \
-  http://clab-gnmi-lab-srl/jsonrpc \
+  http://clab-netops-lab-srl/jsonrpc \
   -H "Content-Type: application/json" \
   -d '{
     "jsonrpc": "2.0",
@@ -309,6 +309,6 @@ Todos os protocolos abaixo correm sobre gRPC e usam Protobuf. O SR Linux tem sup
 |---|---|
 | Utilizador | `admin` |
 | Password | `NokiaSrl1!` |
-| Target gNMI / gNOI | `clab-gnmi-lab-srl:57400` |
-| Target NETCONF | `clab-gnmi-lab-srl:830` |
-| Target JSON-RPC | `http://clab-gnmi-lab-srl/jsonrpc` |
+| Target gNMI / gNOI | `clab-netops-lab-srl:57400` |
+| Target NETCONF | `clab-netops-lab-srl:830` |
+| Target JSON-RPC | `http://clab-netops-lab-srl/jsonrpc` |
